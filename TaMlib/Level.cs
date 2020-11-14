@@ -24,10 +24,10 @@ namespace TamLib
             int i;
             int len = 4;
             int count = 0;
-            Dictionary<string, int> minotaur = new Dictionary<string, int>();
-            Dictionary<string, int> theseus = new Dictionary<string, int>();
-            Dictionary<string, int> exit = new Dictionary<string, int>();
-            Func<Dictionary<string, int>, string, int> GetKey = (dict, key) => (dict.TryGetValue(key, out int val)) ? val : 0;
+            //Dictionary<string, int> minotaur = new Dictionary<string, int>();
+            //Dictionary<string, int> theseus = new Dictionary<string, int>();
+            //Dictionary<string, int> exit = new Dictionary<string, int>();
+            //Func<Dictionary<string, int>, string, int> GetKey = (dict, key) => (dict.TryGetValue(key, out int val)) ? val : 0;
             Func<string, int> GetInt = inp => (int.TryParse(inp, out int val)) ? val : 0;
             for (i = 0; i < 15; i += 5)
             {
@@ -42,20 +42,21 @@ namespace TamLib
                 switch (count)
                 {
                     case 0:
+                        // remove findTME 3 new lines (can be removed)
                         // 0 = y, 1 = x.
-                        minotaur["Y"] = posY;
-                        minotaur["X"] = posX;
-                        //MinotaurPosition = new Position(posY, posX);
+                        //minotaur["Y"] = posY;
+                        //minotaur["X"] = posX;
+                        MinotaurPosition = new Position(posY, posX);
                         break;
                     case 1:
-                        theseus["Y"] = posY;
-                        theseus["X"] = posX;
-                        //TheseusPosition = new Position(posY, posX);
+                        //theseus["Y"] = posY;
+                        //theseus["X"] = posX;
+                        TheseusPosition = new Position(posY, posX);
                         break;
                     case 2:
-                        exit["Y"] = posY;
-                        exit["X"] = posX;
-                        //ExitPosition = new Position(posY, posX);
+                        //exit["Y"] = posY;
+                        //exit["X"] = posX;
+                        ExitPosition = new Position(posY, posX);
                         break;
                 }
                 count++;
@@ -68,9 +69,12 @@ namespace TamLib
                 bool Right = Convert.ToBoolean(GetInt(Data.Substring(n + 1, 1)));
                 bool Bottom = Convert.ToBoolean(GetInt(Data.Substring(n + 2, 1)));
                 bool Left = Convert.ToBoolean(GetInt(Data.Substring(n + 3, 1)));
-                bool isMinotaur = (y == GetKey(minotaur,"Y") && x == GetKey(minotaur, "X")) ? true : false;
-                bool isTheseus = (y == GetKey(theseus, "Y") && x == GetKey(theseus, "X")) ? true : false;
-                bool isExit = (y == GetKey(exit, "Y") && x == GetKey(exit, "X")) ? true : false;
+                //bool isMinotaur = (y == GetKey(minotaur,"Y") && x == GetKey(minotaur, "X")) ? true : false;
+                bool isMinotaur = (y == MinotaurPosition.Y && x == MinotaurPosition.X) ? true : false;
+                //bool isTheseus = (y == GetKey(theseus, "Y") && x == GetKey(theseus, "X")) ? true : false;
+                bool isTheseus = (y == TheseusPosition.Y && x == TheseusPosition.X) ? true : false;
+                //bool isExit = (y == GetKey(exit, "Y") && x == GetKey(exit, "X")) ? true : false;
+                bool isExit = (y == ExitPosition.Y && x == ExitPosition.X) ? true : false;
                 Squares[y,x] = new Square(Top, Left, Bottom, Right, isMinotaur, isTheseus, isExit);
                 if (x == Squares.GetLength(1) - 1 && y < Squares.GetLength(0) - 1)
                 {
@@ -94,34 +98,38 @@ namespace TamLib
             return null;
         }
 
-        private Position FindTme(bool minotaur, bool theseus, bool exit)
-        {
-            for(int y = 0; y < Height; y++)
-            {
-                for (int x = 0; x < Width; x++)
-                {
-                    Square theSquare = Squares[y, x];
-                    if (minotaur && Squares[y, x].Minotaur)
-                    {
-                        return new Position(y, x);
-                    }
-                    if (exit && Squares[y, x].Exit)
-                    {
-                        return new Position(y, x);
-                    }
-                    if (theSquare != null && theseus && Squares[y, x].Theseus)
-                    {
-                        return new Position(y, x);
-                    }
-                }
-            }
-            return new Position();
-        }
+        //private Position FindTme(bool minotaur, bool theseus, bool exit)
+        //{
+        //    for(int y = 0; y < Height; y++)
+        //    {
+        //        for (int x = 0; x < Width; x++)
+        //        {
+        //            Square theSquare = Squares[y, x];
+        //            if (minotaur && Squares[y, x].Minotaur)
+        //            {
+        //                return new Position(y, x);
+        //            }
+        //            if (exit && Squares[y, x].Exit)
+        //            {
+        //                return new Position(y, x);
+        //            }
+        //            if (theSquare != null && theseus && Squares[y, x].Theseus)
+        //            {
+        //                return new Position(y, x);
+        //            }
+        //        }
+        //    }
+        //    return new Position();
+        //    // 10 logical lines
+        //}
 
         public List<Move> AllMoves { get; set; }
-        public Position TheseusPosition { get => FindTme(false, true, false); }
-        public Position MinotaurPosition { get => FindTme(true, false, false); }
-        public Position ExitPosition { get => FindTme(false, false, true); }
+        //public Position TheseusPosition { get => FindTme(false, true, false); }
+        public Position TheseusPosition { get; set; }
+        //public Position MinotaurPosition { get => FindTme(true, false, false); }
+        public Position MinotaurPosition { get; set; }
+        //public Position ExitPosition { get => FindTme(false, false, true); }
+        public Position ExitPosition { get; set; }
         public int MoveCount { get; set; }
 
         public void SetPositions (Move move)
@@ -170,7 +178,9 @@ namespace TamLib
             Square oldPos = AtPosition(TheseusPosition);
             // fixed nullpointerexception cause by trying to access out of range cell from original model
             bool canMove = false;
-            Square newPos = AtPosition(new Position(TheseusPosition.Y + MoveY, TheseusPosition.X + MoveX));
+            // 1 new line
+            Position position = new Position(TheseusPosition.Y + MoveY, TheseusPosition.X + MoveX);
+            Square newPos = AtPosition(position);
             if (newPos != null)
             {
                 // Can query in range
@@ -181,6 +191,8 @@ namespace TamLib
                 oldPos.Theseus = false;
                 newPos.Theseus = true;
                 MoveCount++;
+                // 1 new line
+                TheseusPosition = position;
                 return true;
             }
             return false;
@@ -225,16 +237,22 @@ namespace TamLib
             bool canMove = true;
             Moves direction;
             Square newMinotaurPos = null;
+            // 1 new line
+            Position position = new Position();
             if ((diffX != 0 && diffY != 0) || diffX != 0)
             {
                 int toMove = diffX > 0 ? 1: -1;
                 direction = diffX > 0 ? Moves.RIGHT : Moves.LEFT;
+                // 1 new line
+                position = new Position(MinotaurPosition.Y, MinotaurPosition.X + toMove);
                 newMinotaurPos = Squares[MinotaurPosition.Y, MinotaurPosition.X + toMove];
                 canMove = CanMove(false, direction, minotaurPos, newMinotaurPos);
                 if (!canMove && diffY != 0)
                 {
                     toMove = diffY > 0 ? 1 : -1;
                     direction = diffY > 0 ? Moves.DOWN : Moves.UP;
+                    // 1 new line
+                    position = new Position(MinotaurPosition.Y + toMove, MinotaurPosition.X);
                     newMinotaurPos = Squares[MinotaurPosition.Y + toMove, MinotaurPosition.X];
                     canMove = CanMove(false, direction, minotaurPos, newMinotaurPos);
 
@@ -244,11 +262,14 @@ namespace TamLib
             {
                 int toMove = diffY > 0 ? 1 : -1;
                 direction = diffY > 0 ? Moves.DOWN : Moves.UP;
+                position = new Position(MinotaurPosition.Y + toMove, MinotaurPosition.X);
                 newMinotaurPos = Squares[MinotaurPosition.Y + toMove, MinotaurPosition.X];
                 canMove = CanMove(false, direction, minotaurPos, newMinotaurPos);
             }
             if (canMove)
             {
+                // 1 new line
+                MinotaurPosition = position;
                 newMinotaurPos.Minotaur = true;
                 minotaurPos.Minotaur = false;
             }

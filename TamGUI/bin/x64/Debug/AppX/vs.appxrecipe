@@ -30,13 +30,13 @@
     <AppXManifest Include="F:\CSharp\TaMBase\TamGUI\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-11-14T07:08:51.395</Modified>
+      <Modified>2020-11-14T08:03:08.171</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\CSharp\TaMBase\TamGUI\bin\x64\Debug\TamGUI.exe">
       <PackagePath>entrypoint\TamGUI.exe</PackagePath>
-      <Modified>2020-11-14T07:08:50.593</Modified>
+      <Modified>2020-11-14T08:03:07.440</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sksmi\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -48,7 +48,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CSharp\TaMBase\TaMlib\bin\x64\Debug\TaMlib.dll">
       <PackagePath>TaMlib.dll</PackagePath>
-      <Modified>2020-11-14T01:25:26.907</Modified>
+      <Modified>2020-11-14T08:03:01.619</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
@@ -118,15 +118,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CSharp\TaMBase\TamGUI\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-11-14T07:08:50.413</Modified>
+      <Modified>2020-11-14T08:03:07.252</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CSharp\TaMBase\TamGUI\bin\x64\Debug\BlankPage1.xbf">
       <PackagePath>BlankPage1.xbf</PackagePath>
-      <Modified>2020-11-14T07:08:50.413</Modified>
+      <Modified>2020-11-14T08:03:07.252</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CSharp\TaMBase\TamGUI\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-11-14T07:08:50.413</Modified>
+      <Modified>2020-11-14T08:03:07.252</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -138,7 +138,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\CSharp\TaMBase\TamGUI\bin\x64\Debug\Core\TamGUI.exe">
       <PackagePath>TamGUI.exe</PackagePath>
-      <Modified>2020-11-14T07:08:51.392</Modified>
+      <Modified>2020-11-14T08:03:08.167</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
