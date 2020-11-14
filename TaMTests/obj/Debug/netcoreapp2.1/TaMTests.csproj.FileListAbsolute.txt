@@ -1,0 +1,17 @@
+F:\CSharp\TaMBase\TaMTests\obj\Debug\netcoreapp2.1\TaMTests.csprojAssemblyReference.cache
+F:\CSharp\TaMBase\TaMTests\obj\Debug\netcoreapp2.1\TaMTests.csproj.CoreCompileInputs.cache
+F:\CSharp\TaMBase\TaMTests\obj\Debug\netcoreapp2.1\TaMTests.AssemblyInfoInputs.cache
+F:\CSharp\TaMBase\TaMTests\obj\Debug\netcoreapp2.1\TaMTests.AssemblyInfo.cs
+F:\CSharp\TaMBase\TaMTests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+F:\CSharp\TaMBase\TaMTests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+F:\CSharp\TaMBase\TaMTests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+F:\CSharp\TaMBase\TaMTests\bin\Debug\netcoreapp2.1\TaMTests.deps.json
+F:\CSharp\TaMBase\TaMTests\bin\Debug\netcoreapp2.1\TaMTests.runtimeconfig.json
+F:\CSharp\TaMBase\TaMTests\bin\Debug\netcoreapp2.1\TaMTests.runtimeconfig.dev.json
+F:\CSharp\TaMBase\TaMTests\bin\Debug\netcoreapp2.1\TaMTests.dll
+F:\CSharp\TaMBase\TaMTests\bin\Debug\netcoreapp2.1\TaMTests.pdb
+F:\CSharp\TaMBase\TaMTests\bin\Debug\netcoreapp2.1\TaM.dll
+F:\CSharp\TaMBase\TaMTests\bin\Debug\netcoreapp2.1\TaM.pdb
+F:\CSharp\TaMBase\TaMTests\obj\Debug\netcoreapp2.1\TaMTests.csproj.CopyComplete
+F:\CSharp\TaMBase\TaMTests\obj\Debug\netcoreapp2.1\TaMTests.dll
+F:\CSharp\TaMBase\TaMTests\obj\Debug\netcoreapp2.1\TaMTests.pdb

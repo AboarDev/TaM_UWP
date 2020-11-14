@@ -1,0 +1,2 @@
+F:\CSharp\TaMBase\TamGUI\TamGUI.csproj;x64
+F:\CSharp\TaMBase\TaMlib\TaMlib.csproj;x64
