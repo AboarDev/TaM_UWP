@@ -44,18 +44,12 @@ namespace TamLib
                     case 0:
                         // remove findTME 3 new lines (can be removed)
                         // 0 = y, 1 = x.
-                        //minotaur["Y"] = posY;
-                        //minotaur["X"] = posX;
                         MinotaurPosition = new Position(posY, posX);
                         break;
                     case 1:
-                        //theseus["Y"] = posY;
-                        //theseus["X"] = posX;
                         TheseusPosition = new Position(posY, posX);
                         break;
                     case 2:
-                        //exit["Y"] = posY;
-                        //exit["X"] = posX;
                         ExitPosition = new Position(posY, posX);
                         break;
                 }
