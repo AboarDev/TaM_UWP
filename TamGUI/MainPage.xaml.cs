@@ -69,6 +69,15 @@ namespace TamGui
                 aGrid.RowDefinitions.Add(rowDefinition);
             }
 
+            if (ViewModel.Width > ViewModel.Height)
+            {
+                aGrid.Width += (400 / ViewModel.Height) * (ViewModel.Width - ViewModel.Height);
+            }
+            else if (ViewModel.Height > ViewModel.Width)
+            {
+                aGrid.Height += (400 / ViewModel.Width) * (ViewModel.Height - ViewModel.Width);
+            }
+
             Brush brush = new SolidColorBrush(Colors.DarkBlue);
             for (int y = 0; y < ViewModel.Height; y++)
             {
