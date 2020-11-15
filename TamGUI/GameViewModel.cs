@@ -243,6 +243,7 @@ namespace TamGui
         public int MinotaurY { get; set; }
         public int ExitX { get; set; }
         public int ExitY { get; set; }
+
         public Position ExitPos { get; set; }
 
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)

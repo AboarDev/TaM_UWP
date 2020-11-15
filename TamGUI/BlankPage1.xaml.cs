@@ -54,7 +54,7 @@ namespace TamGui
             GetFile();
         }
 
-        public List<LevelData> LevelDatas;
+        //public List<LevelData> LevelDatas;
 
         public async void GetFile ()
         {

@@ -39,7 +39,6 @@ namespace TamGui
 
         public async Task<T> ParseFile(string toParse)
         {
-            //T t = JsonConvert.DeserializeObject<T>("{\"Name\":\"Test\",\"Height\":7,\"Width\":7,\"Schema\":\"0303 0606 0001 1001 1111 1000 1000 1000 1000 1100 0001 1111 0000 0000 0000 0000 0100 0001 0000 0000 0000 0000 0000 0100 0001 0000 0000 0000 0000 0000 0100 0001 0000 0000 0000 0000 0000 0100 0001 0000 0000 0000 0000 0000 0100 0011 0010 0010 0010 0010 0010 0110\"}");
             T alt = JsonConvert.DeserializeObject<T>(toParse);
             await Task.Delay(0);
             return alt;

@@ -24,10 +24,6 @@ namespace TamLib
             int i;
             int len = 4;
             int count = 0;
-            //Dictionary<string, int> minotaur = new Dictionary<string, int>();
-            //Dictionary<string, int> theseus = new Dictionary<string, int>();
-            //Dictionary<string, int> exit = new Dictionary<string, int>();
-            //Func<Dictionary<string, int>, string, int> GetKey = (dict, key) => (dict.TryGetValue(key, out int val)) ? val : 0;
             Func<string, int> GetInt = inp => (int.TryParse(inp, out int val)) ? val : 0;
             for (i = 0; i < 15; i += 5)
             {
@@ -63,11 +59,8 @@ namespace TamLib
                 bool Right = Convert.ToBoolean(GetInt(Data.Substring(n + 1, 1)));
                 bool Bottom = Convert.ToBoolean(GetInt(Data.Substring(n + 2, 1)));
                 bool Left = Convert.ToBoolean(GetInt(Data.Substring(n + 3, 1)));
-                //bool isMinotaur = (y == GetKey(minotaur,"Y") && x == GetKey(minotaur, "X")) ? true : false;
                 bool isMinotaur = (y == MinotaurPosition.Y && x == MinotaurPosition.X) ? true : false;
-                //bool isTheseus = (y == GetKey(theseus, "Y") && x == GetKey(theseus, "X")) ? true : false;
                 bool isTheseus = (y == TheseusPosition.Y && x == TheseusPosition.X) ? true : false;
-                //bool isExit = (y == GetKey(exit, "Y") && x == GetKey(exit, "X")) ? true : false;
                 bool isExit = (y == ExitPosition.Y && x == ExitPosition.X) ? true : false;
                 Squares[y,x] = new Square(Top, Left, Bottom, Right, isMinotaur, isTheseus, isExit);
                 if (x == Squares.GetLength(1) - 1 && y < Squares.GetLength(0) - 1)
@@ -91,38 +84,10 @@ namespace TamLib
             }
             return null;
         }
-
-        //private Position FindTme(bool minotaur, bool theseus, bool exit)
-        //{
-        //    for(int y = 0; y < Height; y++)
-        //    {
-        //        for (int x = 0; x < Width; x++)
-        //        {
-        //            Square theSquare = Squares[y, x];
-        //            if (minotaur && Squares[y, x].Minotaur)
-        //            {
-        //                return new Position(y, x);
-        //            }
-        //            if (exit && Squares[y, x].Exit)
-        //            {
-        //                return new Position(y, x);
-        //            }
-        //            if (theSquare != null && theseus && Squares[y, x].Theseus)
-        //            {
-        //                return new Position(y, x);
-        //            }
-        //        }
-        //    }
-        //    return new Position();
-        //    // 10 logical lines
-        //}
-
+        
         public List<Move> AllMoves { get; set; }
-        //public Position TheseusPosition { get => FindTme(false, true, false); }
         public Position TheseusPosition { get; set; }
-        //public Position MinotaurPosition { get => FindTme(true, false, false); }
         public Position MinotaurPosition { get; set; }
-        //public Position ExitPosition { get => FindTme(false, false, true); }
         public Position ExitPosition { get; set; }
         public int MoveCount { get; set; }
 
